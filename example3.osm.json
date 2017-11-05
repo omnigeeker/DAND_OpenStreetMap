@@ -1,0 +1,437 @@
+{
+  "pos": [
+    41.9730791, 
+    -87.6866303
+  ], 
+  "visible": "true", 
+  "type": "node", 
+  "id": "261114295", 
+  "created": {
+    "uid": "451048", 
+    "changeset": "11129782", 
+    "version": "7", 
+    "user": "bbmiller", 
+    "timestamp": "2012-03-28T18:31:23Z"
+  }
+}
+{
+  "pos": [
+    41.9730416, 
+    -87.6878512
+  ], 
+  "visible": "true", 
+  "type": "node", 
+  "id": "261114296", 
+  "created": {
+    "uid": "451048", 
+    "changeset": "8448766", 
+    "version": "6", 
+    "user": "bbmiller", 
+    "timestamp": "2011-06-15T17:04:54Z"
+  }
+}
+{
+  "pos": [
+    41.9729565, 
+    -87.6939548
+  ], 
+  "visible": "true", 
+  "type": "node", 
+  "id": "261114299", 
+  "created": {
+    "uid": "451048", 
+    "changeset": "8581395", 
+    "version": "5", 
+    "user": "bbmiller", 
+    "timestamp": "2011-06-29T14:14:14Z"
+  }
+}
+{
+  "pos": [
+    41.970738, 
+    -87.6976025
+  ], 
+  "visible": "true", 
+  "type": "node", 
+  "id": "261146436", 
+  "created": {
+    "uid": "451048", 
+    "changeset": "8581395", 
+    "version": "5", 
+    "user": "bbmiller", 
+    "timestamp": "2011-06-29T14:14:14Z"
+  }
+}
+{
+  "pos": [
+    41.9740068, 
+    -87.6988576
+  ], 
+  "visible": "true", 
+  "type": "node", 
+  "id": "261147304", 
+  "created": {
+    "uid": "451048", 
+    "changeset": "8581395", 
+    "version": "7", 
+    "user": "bbmiller", 
+    "timestamp": "2011-06-29T14:14:15Z"
+  }
+}
+{
+  "pos": [
+    41.9707656, 
+    -87.6938669
+  ], 
+  "visible": "true", 
+  "type": "node", 
+  "id": "261224274", 
+  "created": {
+    "uid": "451048", 
+    "changeset": "8581395", 
+    "version": "5", 
+    "user": "bbmiller", 
+    "timestamp": "2011-06-29T14:14:14Z"
+  }
+}
+{
+  "pos": [
+    41.9730154, 
+    -87.6890403
+  ], 
+  "visible": "true", 
+  "type": "node", 
+  "id": "293816175", 
+  "created": {
+    "uid": "451048", 
+    "changeset": "8448766", 
+    "version": "47", 
+    "user": "bbmiller", 
+    "timestamp": "2011-06-15T16:55:37Z"
+  }
+}
+{
+  "pos": [
+    41.9749225, 
+    -87.6891198
+  ], 
+  "visible": "true", 
+  "type": "node", 
+  "id": "305896090", 
+  "created": {
+    "uid": "567034", 
+    "changeset": "15348240", 
+    "version": "37", 
+    "user": "Umbugbene", 
+    "timestamp": "2013-03-13T07:46:29Z"
+  }
+}
+{
+  "pos": [
+    41.9740292, 
+    -87.701243
+  ], 
+  "visible": "true", 
+  "type": "node", 
+  "id": "317636974", 
+  "created": {
+    "uid": "567034", 
+    "changeset": "15348240", 
+    "version": "12", 
+    "user": "Umbugbene", 
+    "timestamp": "2013-03-13T08:02:56Z"
+  }
+}
+{
+  "pos": [
+    41.9740556, 
+    -87.6979712
+  ], 
+  "visible": "true", 
+  "type": "node", 
+  "id": "317636971", 
+  "created": {
+    "uid": "567034", 
+    "changeset": "15348240", 
+    "version": "13", 
+    "user": "Umbugbene", 
+    "timestamp": "2013-03-13T08:08:01Z"
+  }
+}
+{
+  "pos": [
+    41.9705609, 
+    -87.7012048
+  ], 
+  "visible": "true", 
+  "type": "node", 
+  "id": "317637399", 
+  "created": {
+    "uid": "567034", 
+    "changeset": "14927972", 
+    "version": "2", 
+    "user": "Umbugbene", 
+    "timestamp": "2013-02-05T22:43:49Z"
+  }
+}
+{
+  "pos": [
+    41.9706972, 
+    -87.7012109
+  ], 
+  "visible": "true", 
+  "type": "node", 
+  "id": "317637398", 
+  "created": {
+    "uid": "567034", 
+    "changeset": "14927972", 
+    "version": "2", 
+    "user": "Umbugbene", 
+    "timestamp": "2013-02-05T22:43:49Z"
+  }
+}
+{
+  "pos": [
+    41.973113, 
+    -87.6847998
+  ], 
+  "visible": "true", 
+  "type": "node", 
+  "id": "365214872", 
+  "created": {
+    "uid": "451048", 
+    "changeset": "8448766", 
+    "version": "3", 
+    "user": "bbmiller", 
+    "timestamp": "2011-06-15T17:04:54Z"
+  }
+}
+{
+  "pos": [
+    41.9747482, 
+    -87.6988886
+  ], 
+  "visible": "true", 
+  "type": "node", 
+  "id": "261299091", 
+  "created": {
+    "uid": "451048", 
+    "changeset": "8581395", 
+    "version": "6", 
+    "user": "bbmiller", 
+    "timestamp": "2011-06-29T14:14:15Z"
+  }
+}
+{
+  "pos": [
+    41.9731219, 
+    -87.6841979
+  ], 
+  "visible": "true", 
+  "type": "node", 
+  "id": "261114294", 
+  "created": {
+    "uid": "451048", 
+    "changeset": "8448766", 
+    "version": "6", 
+    "user": "bbmiller", 
+    "timestamp": "2011-06-15T17:04:54Z"
+  }
+}
+{
+  "pos": [
+    41.9707217, 
+    -87.7000019
+  ], 
+  "visible": "true", 
+  "type": "node", 
+  "id": "261210804", 
+  "created": {
+    "uid": "147510", 
+    "changeset": "3359748", 
+    "version": "4", 
+    "user": "woodpeck_fixbot", 
+    "timestamp": "2009-12-13T00:36:09Z"
+  }
+}
+{
+  "pos": [
+    41.9748542, 
+    -87.6922652
+  ], 
+  "visible": "true", 
+  "type": "node", 
+  "id": "261221422", 
+  "created": {
+    "uid": "451048", 
+    "changeset": "8581395", 
+    "version": "7", 
+    "user": "bbmiller", 
+    "timestamp": "2011-06-29T14:14:15Z"
+  }
+}
+{
+  "created": {
+    "uid": "451048", 
+    "changeset": "8581395", 
+    "version": "7", 
+    "user": "bbmiller", 
+    "timestamp": "2011-06-29T14:14:15Z"
+  }, 
+  "pos": [
+    41.9758794, 
+    -87.6923639
+  ], 
+  "visible": "true", 
+  "address": {}, 
+  "type": "node", 
+  "id": "261221424"
+}
+{
+  "created": {
+    "uid": "1219059", 
+    "changeset": "17206049", 
+    "version": "2", 
+    "user": "linuxUser16", 
+    "timestamp": "2013-08-03T16:43:42Z"
+  }, 
+  "k": "1 (773)-271-5176", 
+  "pos": [
+    41.975703, 
+    -87.6921867
+  ], 
+  "visible": "true", 
+  "address": {
+    "city": "Chicago", 
+    "street": "North Lincoln Ave", 
+    "housenumber": "5157", 
+    "postcode": "60625"
+  }, 
+  "type": "node", 
+  "id": "2406124091"
+}
+{
+  "created": {
+    "uid": "1219059", 
+    "changeset": "20187349", 
+    "version": "1", 
+    "user": "linuxUser16", 
+    "timestamp": "2014-01-25T01:56:10Z"
+  }, 
+  "k": "(773)-654-1347", 
+  "pos": [
+    41.9705219, 
+    -87.6900344
+  ], 
+  "visible": "true", 
+  "address": {
+    "city": "Chicago", 
+    "country": "US", 
+    "state": "Illinois", 
+    "street": "N. Lincoln Ave", 
+    "postcode": "60625", 
+    "housenumber": "4874"
+  }, 
+  "type": "node", 
+  "id": "2636084635"
+}
+{
+  "pos": [
+    41.9707413, 
+    -87.6963097
+  ], 
+  "visible": "true", 
+  "type": "node", 
+  "id": "261198953", 
+  "created": {
+    "uid": "451048", 
+    "changeset": "8581395", 
+    "version": "6", 
+    "user": "bbmiller", 
+    "timestamp": "2011-06-29T14:14:13Z"
+  }
+}
+{
+  "created": {
+    "uid": "26299", 
+    "changeset": "5288876", 
+    "version": "2", 
+    "user": "uboot", 
+    "timestamp": "2010-07-22T16:16:51Z"
+  }, 
+  "k": "Shelly's Tasty Freeze", 
+  "pos": [
+    41.9747374, 
+    -87.6920102
+  ], 
+  "visible": "true", 
+  "address": {}, 
+  "type": "node", 
+  "id": "757860928"
+}
+{
+  "node_refs": [
+    "2636086179", 
+    "2636086178", 
+    "2636086177", 
+    "2636086176"
+  ], 
+  "created": {
+    "uid": "1219059", 
+    "changeset": "20187382", 
+    "version": "1", 
+    "user": "linuxUser16", 
+    "timestamp": "2014-01-25T02:01:54Z"
+  }, 
+  "visible": "true", 
+  "address": {}, 
+  "type": "way", 
+  "id": "258219703"
+}
+{
+  "created": {
+    "uid": "634589", 
+    "changeset": "11043902", 
+    "version": "2", 
+    "user": "Jacobs Studios", 
+    "timestamp": "2012-03-20T18:56:44Z"
+  }, 
+  "k": "Village Hall", 
+  "pos": [
+    42.1251718, 
+    -88.0780576
+  ], 
+  "address": {
+    "housenumber": "1400", 
+    "street": "Baldwin Rd.", 
+    "housename": "Village Hall", 
+    "postcode": "60067"
+  }, 
+  "type": "node", 
+  "id": "1683602133"
+}
+{
+  "node_refs": [
+    "2199822281", 
+    "2199822390", 
+    "2199822392", 
+    "2199822369", 
+    "2199822370", 
+    "2199822284", 
+    "2199822281"
+  ], 
+  "created": {
+    "uid": "674454", 
+    "changeset": "15353317", 
+    "version": "1", 
+    "user": "chicago-buildings", 
+    "timestamp": "2013-03-13T15:58:04Z"
+  }, 
+  "visible": "true", 
+  "address": {
+    "street": "West Lexington St.", 
+    "housenumber": "1412"
+  }, 
+  "type": "way", 
+  "id": "209809850"
+}
