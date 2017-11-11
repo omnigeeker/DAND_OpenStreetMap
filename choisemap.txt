@@ -1,0 +1,8 @@
+我选择的地图时上海市的地图，因为我就住在上海，对上海市非常熟悉
+
+我选择的地图链接是：
+https://mapzen.com/data/metro-extracts/your-extracts/60feed1af51d
+
+下载的具体OSM是地址是：
+https://s3.amazonaws.com/mapzen.odes/ex_mRA8Tb7wXg7FR1aGCbfkLDeeDwgrJ.osm.bz2
+

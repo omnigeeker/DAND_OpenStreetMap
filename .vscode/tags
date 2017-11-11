@@ -4,4 +4,70 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-tags.py	tags.py	1;"	kind:file	line:1
+CREATED	exercise/data.py	/^CREATED = [ "version", "changeset", "timestamp", "user", "uid"]$/;"	kind:variable	line:92
+ET	create_sample.py	/^import xml.etree.ElementTree as ET  # Use cElementTree or lxml if too slow$/;"	kind:namespace	line:4
+ET	exercise/audit.py	/^import xml.etree.cElementTree as ET$/;"	kind:namespace	line:12
+ET	exercise/data.py	/^import xml.etree.cElementTree as ET$/;"	kind:namespace	line:3
+ET	exercise/tags.py	/^import xml.etree.cElementTree as ET$/;"	kind:namespace	line:3
+ET	exercise/users.py	/^import xml.etree.cElementTree as ET$/;"	kind:namespace	line:3
+OSMFILE	exercise/audit.py	/^OSMFILE = "example2.osm"$/;"	kind:variable	line:17
+OSM_FILE	create_sample.py	/^OSM_FILE = "data\/ex_shanghai.osm"  # Replace this with your osm file$/;"	kind:variable	line:6
+SAMPLE_FILE	create_sample.py	/^SAMPLE_FILE = "data\/ex_shanghai_sample.osm"$/;"	kind:variable	line:7
+Use	create_sample.py	/^import xml.etree.ElementTree as ET  # Use cElementTree or lxml if too slow$/;"	kind:namespace	line:4
+audit	exercise/audit.py	/^def audit(osmfile):$/;"	kind:function	line:45
+audit.py	exercise/audit.py	1;"	kind:file	line:1
+audit_street_type	exercise/audit.py	/^def audit_street_type(street_types, street_name):$/;"	kind:function	line:33
+cElementTree	create_sample.py	/^import xml.etree.ElementTree as ET  # Use cElementTree or lxml if too slow$/;"	kind:namespace	line:4
+codecs	exercise/data.py	/^import codecs$/;"	kind:namespace	line:6
+create_sample.py	create_sample.py	1;"	kind:file	line:1
+data.py	exercise/data.py	1;"	kind:file	line:1
+defaultdict	exercise/audit.py	/^from collections import defaultdict$/;"	kind:namespace	line:13
+etree	create_sample.py	/^import xml.etree.ElementTree as ET  # Use cElementTree or lxml if too slow$/;"	kind:namespace	line:4
+etree	exercise/audit.py	/^import xml.etree.cElementTree as ET$/;"	kind:namespace	line:12
+etree	exercise/data.py	/^import xml.etree.cElementTree as ET$/;"	kind:namespace	line:3
+etree	exercise/tags.py	/^import xml.etree.cElementTree as ET$/;"	kind:namespace	line:3
+etree	exercise/users.py	/^import xml.etree.cElementTree as ET$/;"	kind:namespace	line:3
+expected	exercise/audit.py	/^expected = ["Street", "Avenue", "Boulevard", "Drive", "Court", "Place", "Square", "Lane", "Road", $/;"	kind:variable	line:21
+get_element	create_sample.py	/^def get_element(osm_file, tags=('node', 'way', 'relation')):$/;"	kind:function	line:11
+get_user	exercise/users.py	/^def get_user(element):$/;"	kind:function	line:14
+if	create_sample.py	/^import xml.etree.ElementTree as ET  # Use cElementTree or lxml if too slow$/;"	kind:namespace	line:4
+is_street_name	exercise/audit.py	/^def is_street_name(elem):$/;"	kind:function	line:41
+json	exercise/data.py	/^import json$/;"	kind:namespace	line:7
+k	create_sample.py	/^k = 150 # Parameter: take every k-th top level element$/;"	kind:variable	line:9
+key_type	exercise/tags.py	/^def key_type(element, keys):$/;"	kind:function	line:33
+lower	exercise/data.py	/^lower = re.compile(r'^([a-z]|_)*$')$/;"	kind:variable	line:88
+lower	exercise/tags.py	/^lower = re.compile(r'^([a-z]|_)*$')$/;"	kind:variable	line:28
+lower_colon	exercise/data.py	/^lower_colon = re.compile(r'^([a-z]|_)*:([a-z]|_)*$')$/;"	kind:variable	line:89
+lower_colon	exercise/tags.py	/^lower_colon = re.compile(r'^([a-z]|_)*:([a-z]|_)*$')$/;"	kind:variable	line:29
+lxml	create_sample.py	/^import xml.etree.ElementTree as ET  # Use cElementTree or lxml if too slow$/;"	kind:namespace	line:4
+mapping	exercise/audit.py	/^mapping = { "St": "Street",$/;"	kind:variable	line:25
+or	create_sample.py	/^import xml.etree.ElementTree as ET  # Use cElementTree or lxml if too slow$/;"	kind:namespace	line:4
+pprint	exercise/audit.py	/^import pprint$/;"	kind:namespace	line:15
+pprint	exercise/data.py	/^import pprint$/;"	kind:namespace	line:4
+pprint	exercise/tags.py	/^import pprint$/;"	kind:namespace	line:4
+pprint	exercise/users.py	/^import pprint$/;"	kind:namespace	line:4
+problemchars	exercise/data.py	/^problemchars = re.compile(r'[=\\+\/&<>;\\'"\\?%#$@\\,\\. \\t\\r\\n]')$/;"	kind:variable	line:90
+problemchars	exercise/tags.py	/^problemchars = re.compile(r'[=\\+\/&<>;\\'"\\?%#$@\\,\\. \\t\\r\\n]')$/;"	kind:variable	line:30
+process_map	exercise/data.py	/^def process_map(file_in, pretty = False):$/;"	kind:function	line:133
+process_map	exercise/tags.py	/^def process_map(filename):$/;"	kind:function	line:51
+process_map	exercise/users.py	/^def process_map(filename):$/;"	kind:function	line:17
+re	exercise/audit.py	/^import re$/;"	kind:namespace	line:14
+re	exercise/data.py	/^import re$/;"	kind:namespace	line:5
+re	exercise/tags.py	/^import re$/;"	kind:namespace	line:5
+re	exercise/users.py	/^import re$/;"	kind:namespace	line:5
+shape_element	exercise/data.py	/^def shape_element(element):$/;"	kind:function	line:94
+slow	create_sample.py	/^import xml.etree.ElementTree as ET  # Use cElementTree or lxml if too slow$/;"	kind:namespace	line:4
+street_type_re	exercise/audit.py	/^street_type_re = re.compile(r'\\b\\S+\\.?$', re.IGNORECASE)$/;"	kind:variable	line:18
+tags.py	exercise/tags.py	1;"	kind:file	line:1
+test	exercise/audit.py	/^def test():$/;"	kind:function	line:69
+test	exercise/data.py	/^def test():$/;"	kind:function	line:148
+test	exercise/tags.py	/^def test():$/;"	kind:function	line:60
+test	exercise/users.py	/^def test():$/;"	kind:function	line:26
+too	create_sample.py	/^import xml.etree.ElementTree as ET  # Use cElementTree or lxml if too slow$/;"	kind:namespace	line:4
+update_name	exercise/audit.py	/^def update_name(name, mapping):$/;"	kind:function	line:58
+users.py	exercise/users.py	1;"	kind:file	line:1
+xml	create_sample.py	/^import xml.etree.ElementTree as ET  # Use cElementTree or lxml if too slow$/;"	kind:namespace	line:4
+xml	exercise/audit.py	/^import xml.etree.cElementTree as ET$/;"	kind:namespace	line:12
+xml	exercise/data.py	/^import xml.etree.cElementTree as ET$/;"	kind:namespace	line:3
+xml	exercise/tags.py	/^import xml.etree.cElementTree as ET$/;"	kind:namespace	line:3
+xml	exercise/users.py	/^import xml.etree.cElementTree as ET$/;"	kind:namespace	line:3
