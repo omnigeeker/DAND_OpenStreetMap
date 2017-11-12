@@ -1,5 +1,12 @@
 # OpenStreetMap Sample Project Data Wrangling with MongoDB
 
+我选择的地图链接是：
+https://mapzen.com/data/metro-extracts/your-extracts/60feed1af51d
+
+下载的具体OSM是地址是：
+https://s3.amazonaws.com/mapzen.odes/ex_mRA8Tb7wXg7FR1aGCbfkLDeeDwgrJ.osm.bz2
+
+
 ## 1. 地图中遇到的问题
 
 在最初下载上海地区的小样本并运行临时data_explore.py文件后，我注意到了数据的三个主要问题，我将按以下顺序讨论：
@@ -9,7 +16,7 @@
 - 邮政编码错误，上海没有20开头的右边，如 [314211]
 
 #### 过分简化的街道名称(另外部分英文名称中也包含了街道名称)
-我的方案是，对字符传进行处理，将一些简化的字符串还原为正常的。如<br />
+我的方案是，对字符串进行处理，将一些简化的字符串还原为正常的。如<br />
 Gongji Rd.(E.) ---> Gongji Road(E.)
 Bao'an Hwy. ---> Bao'an Highway
 另外部分Node和Wat英文名称中也包含了街道名称，这个也要对应地做调整
@@ -69,13 +76,13 @@ ex_shanghai.osm ......... 253 MB<br />
 ex_shanghai.osm.json ......... 386 MB<br />
 
 文档数
-```shell
+```javascript
 > db.arachnid.find().count()
 1355351
 ```
 
 节点(node)和道路(way)的数量
-```shell
+```javascript
 >  db.arachnid.find({"type":"node"}).count()
 1189350
 >  db.arachnid.find({"type":"way"}).count()
@@ -83,13 +90,13 @@ ex_shanghai.osm.json ......... 386 MB<br />
 ```
 
 创建数据的用户数(created.user)的数量
-```shell
+```javascript
 >  db.arachnid.distinct("created.user").length
 1649
 ```
 
 创建数据量最多的前30个用户是:
-```shell
+```javascript
 > db.arachnid.aggregate(
     [{"$group":{"_id":"$created.user", 
                 "count":{"$sum":1}}},
@@ -107,9 +114,11 @@ ex_shanghai.osm.json ......... 386 MB<br />
 { "_id" : "Austin Zhu", "count" : 44606 }
 { "_id" : "HWST", "count" : 41550 }
 ```
+可以大致看出，贡献数据的人并没有出现1到2个贡献的了大部分数据的情况。
+在此我代表openstreetmap,对以上几位贡献数据最多的用户表示真心地感谢。
 
 创建数据量最多的前十个用户创建的数据总共有：
-```shell
+```javascript
 > db.arachnid.aggregate(
     [{"$group":{"_id":"$created.user", 
                 "count":{"$sum":1}}},
@@ -120,10 +129,11 @@ ex_shanghai.osm.json ......... 386 MB<br />
 
 { "_id" : null, "total" : 997873 }
 ```
-
+可以看出，贡献数据最多的前10个人，贡献的数据是 997873，占总数 1355351 的 73.6%。
+数据说明了少部分用户贡献了大部分数据。
 
 只创建过1条到10条数据的用户有哪些:
-```shell
+```javascript
 > db.arachnid.aggregate(
     [{"$group":{"_id":"$created.user", 
                 "count":{"$sum":1}}},
@@ -143,9 +153,10 @@ ex_shanghai.osm.json ......... 386 MB<br />
 { "_id" : 9, "num_users" : 24 }
 { "_id" : 10, "num_users" : 20 }
 ```
+从以上数据可以看出，很大部分用户只贡献了很少的数据。
 
 只创建过20条数据一下的用户有哪些:
-```shell
+```javascript
 > db.arachnid.aggregate(
     [{"$group":{"_id":"$created.user", 
                 "count":{"$sum":1}}},
@@ -158,44 +169,86 @@ ex_shanghai.osm.json ......... 386 MB<br />
 
 { "_id" : null, "total" : 922 }
 ```
+从数据可以看出，贡献了20条数据以及一下的用户数 922，总共贡献数据的用户数是 1649，占比 55.9。
+也就是说超过了一半的用户，只贡献了很少的数据。
 
 ## 3. 其他发现
 
+首先，从前面用户数的情况看，用户贡献并不是非常积极的。建议openstreetmap可以采用一些心里奖励的机制来鼓励用户更多地贡献数据，例如搞个排行版，给些徽章等等方式。
+
+后面我们探索一下数据中还隐藏了哪些其他的信息。
+
 前10名出现的设施 
-```shell
-> db.char.aggregate(
+```javascript
+> db.arachnid.aggregate(
     [{"$match":{"amenity":{"$exists":1}}},
     {"$group":{"_id":"$amenity", 
                "count":{"$sum":1}}},
-    {"$sort":{"count":1}}, 
+    {"$sort":{"count":-1}}, 
     {"$limit":10}])
 
-什么都没有
+{ "_id" : "restaurant", "count" : 932 }
+{ "_id" : "parking", "count" : 691 }
+{ "_id" : "school", "count" : 578 }
+{ "_id" : "bank", "count" : 384 }
+{ "_id" : "cafe", "count" : 312 }
+{ "_id" : "toilets", "count" : 299 }
+{ "_id" : "fast_food", "count" : 240 }
+{ "_id" : "bicycle_rental", "count" : 209 }
+{ "_id" : "fuel", "count" : 155 }
+{ "_id" : "hospital", "count" : 151 }
 ```
+根据以上可以看出，最多的分别是 餐厅，停车场，学习，公园，还有咖啡厅
 
-最大的宗教
-```shell
-> db.char.aggregate(
-    [{"$match":{"amenity":{"$exists":1},                                "amenity":"place_of_worship"}}, 
+最多的宗教场所
+```javascript
+> db.arachnid.aggregate(
+    [{"$match":{"amenity":{"$exists":1},                                
+                "amenity":"place_of_worship"}}, 
     {"$group":{"_id":"$religion", 
                "count":{"$sum":1}}}, 
-    {"$sort":{"count":1}}, 
-    {"$limit":1}])
+    {"$sort":{"count":-1}}, 
+    {"$limit":10}])
 
-什么都没有
+{ "_id" : "christian", "count" : 24 }
+{ "_id" : null, "count" : 16 }
+{ "_id" : "buddhist", "count" : 16 }
+{ "_id" : "muslim", "count" : 4 }
+{ "_id" : "taoist", "count" : 3 }
+{ "_id" : "jewish", "count" : 1 }
 ```
+说明上海的宗教场所并不多，最多也是 基督教 和 佛教。不过基督教的居然多余佛教，也是意外。
 
 最受欢迎的美食 
-```shell
-> db.char.aggregate(
-    [{"$match":{"amenity":{"$exists":1},                                "amenity":"restaurant"}}, 
+```javascript
+> db.arachnid.aggregate(
+    [{"$match":{"amenity":{"$exists":1}, 
+                "amenity":"restaurant"}}, 
     {"$group":{"_id":"$cuisine", 
                "count":{"$sum":1}}}, 
-    {"$sort":{"count":1}}, 
-    {"$limit":2}]) 
+    {"$sort":{"count":-1}}, 
+    {"$limit":10}]) 
 
-什么都没有 
+{ "_id" : null, "count" : 647 }
+{ "_id" : "chinese", "count" : 99 }
+{ "_id" : "japanese", "count" : 15 }
+{ "_id" : "burger", "count" : 14 }
+{ "_id" : "italian", "count" : 13 }
+{ "_id" : "noodles", "count" : 10 }
+{ "_id" : "asian", "count" : 9 }
+{ "_id" : "american", "count" : 9 }
+{ "_id" : "international", "count" : 7 }
+{ "_id" : "pizza", "count" : 7 } 
 ```
+从数据可以看出，中国口味的餐厅占据大多数，除去中国口味的餐厅，最多就是日本菜，汉堡 和 意大利口味
 
 ## 4. 总结
 
+在对这些数据进行审查之后，上海地区的数据显然是不完整的，我认为上海的数据应该远远不止这些，但我相信已有的数据已经被清理干净了。
+
+## 参考资料
+OpenStreetMap:
+http://www.openstreetmap.org
+
+Charlotte area Report
+https://s3.cn-north-1.amazonaws.com.cn/static-documents/nd002/SampleDataWranglingProject_en.pdf 

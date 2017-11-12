@@ -62,24 +62,30 @@ def is_street_name(elem):
     return (elem.attrib['k'] == "addr:street")
 
 def print_tag_key_names(filename):
+    ks = set()
     for event,elem in ET.iterparse(filename):
         if elem.tag == "node" or elem.tag == "way":
             for tag in elem.iter("tag"):
+                k,v = tag.attrib['k'],tag.attrib['v']
+                if k not in ks:
+                    ks.add(k)
                 if 1:  # check street name
-                    if tag.attrib['k'] == "addr:street":
-                        print elem.tag, "addr:street", tag.attrib['v']
-                    if tag.attrib['k'] == "name:en":
-                        print elem.tag, "name:en", tag.attrib['v']
+                    if k == "addr:street":
+                        print elem.tag, "addr:street", v
+                    if k == "name:en":
+                        print elem.tag, "name:en", v
                 if 1:  # check city, districy, province
-                    if  tag.attrib['k'] == "addr:city":
-                        print elem.tag, "addr:city", tag.attrib['v']
-                    if  tag.attrib['k'] == "addr:district":
-                        print elem.tag, "addr:district", tag.attrib['v']
-                    if  tag.attrib['k'] == "addr:province":
-                        print elem.tag, "addr:province", tag.attrib['v']
+                    if k == "addr:city":
+                        print elem.tag, "addr:city", v
+                    if k == "addr:district":
+                        print elem.tag, "addr:district", v
+                    if k == "addr:province":
+                        print elem.tag, "addr:province", v
                 if 1:  # check postCode
-                    if  tag.attrib['k'] == "addr:postcode":
-                        print elem.tag, "addr:postcode", tag.attrib['v']
+                    if k == "addr:postcode":
+                        print elem.tag, "addr:postcode", v
+    return ks
+
 def test(filename):
     ### check tages
     tags = count_tags(filename)
@@ -95,7 +101,9 @@ def test(filename):
 
     ### check tag key name
     print("")
-    print_tag_key_names(filename)
+    ks = print_tag_key_names(filename)
+    print("")
+    pprint.pprint(ks)
 
 if __name__ == "__main__":
     filename = 'data_sample/ex_shanghai_sample.osm'

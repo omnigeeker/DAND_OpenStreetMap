@@ -36,10 +36,12 @@ from pymongo import MongoClient
 
 street_type_re = re.compile(r'\b\S+\.?$', re.IGNORECASE)
 
-expected = ["Street", "Avenue", "Boulevard", "Drive", "Court", "Place", "Square", "Lane", "Road", 
+expected = ["Street", "Avenue", "Boulevard", "Drive", 
+            "Court", "Place", "Square", "Lane", "Road", 
             "Trail", "Parkway", "Commons"]
 
-roi_infos = set(["amenity","cuisine","phone","name"])
+roi_infos = set(["amenity","cuisine","phone","name","religion",
+                "oneway","highway","railway","frequency"])
 
 # UPDATE THIS VARIABLE
 mapping = { "St": "Street", "St.": "Street",
@@ -48,7 +50,7 @@ mapping = { "St": "Street", "St.": "Street",
             "Hwy" : "Highway", "Hwy." : "Highway",
             }
 
-CREATED = [ "version", "changeset", "timestamp", "user", "uid"]
+CREATED = ["version", "changeset", "timestamp", "user", "uid"]
 
 def is_cn_street_name(k):
     return (k == "addr:street")
@@ -127,7 +129,7 @@ def shape_element(element):
                 node["name:en"] = audit_en_street_name(v)
             ## 处理其他
             if k in roi_infos:
-                node["k"] = v
+                node[k] = v
 
         if element.tag == "way":
             for nd in element.iter("nd"):
@@ -150,9 +152,16 @@ def test_process_map(file_in):
 
 def test(filename):
     data = test_process_map(filename)
-    pprint.pprint(data[:10])
+    i = 0
+    for d in data:
+        if d.has_key("amenity"):
+            pprint.pprint(d)
+            i += 1
+            if i >= 2: break
+    
 
 def save_to_mongodb(filename):
+    print "connect to mongodb"
     client = MongoClient("mongodb://localhost:27017")
     db = client.openstreetmap
     print "begin insert all data into mongodb openstreetmap"
@@ -165,7 +174,7 @@ def save_to_mongodb(filename):
             i += 1
             if i % 2000 == 0:
                 print "insert %d data"%i
-    print("total insert %d data"%i)
+    print "total insert %d data"%i
     print ""
     print "end insert all data into mongodb openstreetmap"
     print db.arachnid.find_one()                
