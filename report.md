@@ -210,11 +210,12 @@ ex_shanghai.osm.json ......... 386 MB<br />
     {"$sort":{"count":-1}}, 
     {"$limit":10}])
 
-{ "_id" : "christian", "count" : 24 }
-{ "_id" : null, "count" : 16 }
-{ "_id" : "buddhist", "count" : 16 }
-{ "_id" : "muslim", "count" : 4 }
+{ "_id" : "christian", "count" : 29 }
+{ "_id" : "buddhist", "count" : 20 }
+{ "_id" : null, "count" : 18 }
+{ "_id" : "muslim", "count" : 5 }
 { "_id" : "taoist", "count" : 3 }
+{ "_id" : "confucian", "count" : 2 }
 { "_id" : "jewish", "count" : 1 }
 ```
 说明上海的宗教场所并不多，最多也是 基督教 和 佛教。不过基督教的居然多余佛教，也是意外。
@@ -241,6 +242,43 @@ ex_shanghai.osm.json ......... 386 MB<br />
 { "_id" : "pizza", "count" : 7 } 
 ```
 从数据可以看出，中国口味的餐厅占据大多数，除去中国口味的餐厅，最多就是日本菜，汉堡 和 意大利口味
+
+具有高速公路点的数量
+```javascript
+> db.arachnid.aggregate(
+    [{"$match":{"highway":{"$exists":1}}}, 
+    {"$group":{"_id":"$type", 
+               "count":{"$sum":1}}}, 
+    {"$sort":{"count":-1}}]) 
+
+{ "_id" : "way", "count" : 90279 }
+{ "_id" : "node", "count" : 6842 }
+```
+
+具有高速公路属性的具体内容前10位分别是
+```javascript
+> db.arachnid.aggregate(
+    [{"$match":{"highway":{"$exists":1}}}, 
+    {"$group":{"_id":"$highway", 
+               "count":{"$sum":1}}}, 
+    {"$sort":{"count":-1}},
+    {"$limit": 10}]) 
+
+{ "_id" : "way", "count" : 90279 }
+{ "_id" : "node", "count" : 6842 }
+
+{ "_id" : "service", "count" : 16790 }
+{ "_id" : "residential", "count" : 13321 }
+{ "_id" : "tertiary", "count" : 11205 }
+{ "_id" : "unclassified", "count" : 10633 }
+{ "_id" : "primary", "count" : 7867 }
+{ "_id" : "secondary", "count" : 7025 }
+{ "_id" : "footway", "count" : 5413 }
+{ "_id" : "motorway", "count" : 4167 }
+{ "_id" : "motorway_link", "count" : 3879 }
+{ "_id" : "traffic_signals", "count" : 2575 }
+```
+说明有高速公路属性的节点，服务区，餐馆和第三产业是最多的
 
 ## 4. 总结
 
